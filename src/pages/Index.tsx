@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { Calendar, Menu, X, Home, Info, Map, Globe, Car, Image, MessageCircle, Mail, CalendarPlus, Star, Calculator } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
@@ -43,20 +42,20 @@ const Index = () => {
     },
     {
       title: "Andaman Islands",
-      image: "https://images.unsplash.com/photo-1465101178521-c1a9136a9375?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80",
       description: "Havelock, Radhanagar beach, scuba diving. 5 days, island paradise."
     }
   ];
 
   const internationalTours = [
     { title: "Vietnam", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80", description: "Hanoi, Halong Bay, Ho Chi Minh. 7 days, vibrant culture." },
-    { title: "Dubai", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80", description: "Burj Khalifa, desert safari, shopping. 5 days, futuristic city." },
+    { title: "Dubai", image: "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?auto=format&fit=crop&w=600&q=80", description: "Burj Khalifa, desert safari, shopping. 5 days, futuristic city." },
     { title: "Russia", image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80", description: "Moscow, St. Petersburg, Red Square. 8 days, grand history." },
     { title: "Estonia", image: "https://images.unsplash.com/photo-1518976024611-4886d2ba0a10?auto=format&fit=crop&w=600&q=80", description: "Tallinn old town, Baltic coast. 6 days, fairy tale Europe." },
-    { title: "Spain", image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", description: "Barcelona, Madrid, flamenco, beaches. 8 days, fiesta!" },
-    { title: "Japan", image: "https://images.unsplash.com/photo-1465101178521-c1a9136a9375?auto=format&fit=crop&w=600&q=80", description: "Tokyo, Kyoto, Mt. Fuji, cherry blossoms. 8 days, tech meets tradition." },
-    { title: "Egypt", image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80", description: "Pyramids, Nile cruise, ancient wonders. 7 days, timeless marvels." },
-    { title: "Australia", image: "https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?auto=format&fit=crop&w=600&q=80", description: "Sydney, Great Barrier Reef, Gold Coast. 9 days, adventure down under." }
+    { title: "Spain", image: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80", description: "Barcelona, Madrid, flamenco, beaches. 8 days, fiesta!" },
+    { title: "Japan", image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=600&q=80", description: "Tokyo, Kyoto, Mt. Fuji, cherry blossoms. 8 days, tech meets tradition." },
+    { title: "Egypt", image: "https://images.unsplash.com/photo-1539650116574-75c0c6d90dc5?auto=format&fit=crop&w=600&q=80", description: "Pyramids, Nile cruise, ancient wonders. 7 days, timeless marvels." },
+    { title: "Thailand", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80", description: "Bangkok temples, Phuket beaches, Thai cuisine. 6 days, tropical paradise." }
   ];
 
   const testimonials = [
@@ -139,7 +138,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
-      {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -221,7 +219,6 @@ const Index = () => {
         )}
       </nav>
 
-      {/* Hero Section */}
       <section id="home" className="pt-16 relative h-screen flex items-center">
         <div className="absolute inset-0 overflow-hidden rounded-2xl mx-4 mt-4 border border-slate-200">
           <img
@@ -262,7 +259,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Us */}
       <section id="about" className="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-slate-800 mb-4 flex items-center justify-center gap-3">
@@ -332,7 +328,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Car Rental */}
       <section id="rental" className="py-20 bg-white/50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-slate-800 mb-12 flex items-center gap-3">
@@ -390,7 +385,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Gallery */}
       <section id="gallery" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-slate-800 mb-12 flex items-center gap-3">
@@ -404,9 +398,9 @@ const Index = () => {
               "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
               "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80",
               "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1465101178521-c1a9136a9375?auto=format&fit=crop&w=400&q=80",
+              "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80",
               "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80"
+              "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=400&q=80"
             ].map((src, index) => (
               <img
                 key={index}
@@ -419,7 +413,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section id="testimonials" className="py-20 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-slate-800 mb-12 flex items-center gap-3">
@@ -455,7 +448,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-slate-800 mb-8">Ready to Start Your Journey?</h2>
@@ -474,7 +466,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Booking Section (Hidden, used for scroll target) */}
       <div id="booking" className="h-1"></div>
     </div>
   );
