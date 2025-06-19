@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Calendar, Menu, X, Home, Info, Map, Globe, Car, Image, MessageCircle, Mail, CalendarPlus, Star, Calculator } from 'lucide-react';
+import { Calendar, Menu, X, Home, Info, Map, Globe, Car, Image, MessageCircle, Mail, CalendarPlus, Star, Calculator, Eye, ShoppingCart } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
 
 const Index = () => {
@@ -18,44 +18,126 @@ const Index = () => {
     {
       title: "Ladakh Adventure",
       image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80",
-      description: "Snow deserts, monasteries, Pangong Lake, and adventure rides. 7 days, all inclusive."
+      description: "Snow deserts, monasteries, Pangong Lake, and adventure rides through the world's highest motorable roads.",
+      duration: "7 Days / 6 Nights",
+      price: "₹35,999",
+      originalPrice: "₹42,000"
     },
     {
       title: "Gangtok & North Sikkim",
       image: "https://images.unsplash.com/photo-1519681393-2de5e0c1df6a?auto=format&fit=crop&w=600&q=80",
-      description: "Lachung, Gurudongmar, Yumthang Valley, MG Road. 6 days, Himalayan beauty."
+      description: "Lachung, Gurudongmar Lake, Yumthang Valley, MG Road. Experience pristine Himalayan beauty.",
+      duration: "6 Days / 5 Nights",
+      price: "₹28,999",
+      originalPrice: "₹34,000"
     },
     {
       title: "Kerala Backwaters",
       image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-      description: "Alleppey houseboats, Munnar, tea gardens, wildlife. 5 days, relaxing escape."
+      description: "Alleppey houseboats, Munnar tea gardens, Thekkady wildlife sanctuary. God's own country awaits.",
+      duration: "5 Days / 4 Nights",
+      price: "₹22,999",
+      originalPrice: "₹27,000"
     },
     {
       title: "Goa Beaches",
       image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
-      description: "Sun, sand, nightlife, forts & spice plantations. 4 days, coastal fun."
+      description: "Sun, sand, nightlife, Portuguese forts & spice plantations. Perfect coastal getaway.",
+      duration: "4 Days / 3 Nights",
+      price: "₹18,999",
+      originalPrice: "₹23,000"
     },
     {
       title: "Royal Rajasthan",
       image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
-      description: "Jaipur, Udaipur, Jodhpur palaces, camel safari. 7 days, cultural grandeur."
+      description: "Jaipur Pink City, Udaipur lakes, Jodhpur Blue City, camel safari. Royal heritage tour.",
+      duration: "7 Days / 6 Nights",
+      price: "₹31,999",
+      originalPrice: "₹38,000"
+    },
+    {
+      title: "Himachal Paradise",
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80",
+      description: "Shimla, Manali, Rohtang Pass, Solang Valley. Hill station bliss with adventure activities.",
+      duration: "6 Days / 5 Nights",
+      price: "₹26,999",
+      originalPrice: "₹32,000"
     },
     {
       title: "Andaman Islands",
-      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80",
-      description: "Havelock, Radhanagar beach, scuba diving. 5 days, island paradise."
+      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=600&q=80",
+      description: "Havelock Island, Radhanagar Beach, scuba diving, water sports. Tropical paradise escape.",
+      duration: "5 Days / 4 Nights",
+      price: "₹33,999",
+      originalPrice: "₹40,000"
     }
   ];
 
   const internationalTours = [
-    { title: "Vietnam", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80", description: "Hanoi, Halong Bay, Ho Chi Minh. 7 days, vibrant culture." },
-    { title: "Dubai", image: "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?auto=format&fit=crop&w=600&q=80", description: "Burj Khalifa, desert safari, shopping. 5 days, futuristic city." },
-    { title: "Russia", image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80", description: "Moscow, St. Petersburg, Red Square. 8 days, grand history." },
-    { title: "Estonia", image: "https://images.unsplash.com/photo-1518976024611-4886d2ba0a10?auto=format&fit=crop&w=600&q=80", description: "Tallinn old town, Baltic coast. 6 days, fairy tale Europe." },
-    { title: "Spain", image: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80", description: "Barcelona, Madrid, flamenco, beaches. 8 days, fiesta!" },
-    { title: "Japan", image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=600&q=80", description: "Tokyo, Kyoto, Mt. Fuji, cherry blossoms. 8 days, tech meets tradition." },
-    { title: "Egypt", image: "https://images.unsplash.com/photo-1539650116574-75c0c6d90dc5?auto=format&fit=crop&w=600&q=80", description: "Pyramids, Nile cruise, ancient wonders. 7 days, timeless marvels." },
-    { title: "Thailand", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80", description: "Bangkok temples, Phuket beaches, Thai cuisine. 6 days, tropical paradise." }
+    {
+      title: "Vietnam Discovery",
+      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80",
+      description: "Hanoi, Halong Bay cruise, Ho Chi Minh City, Cu Chi Tunnels. Vibrant culture and cuisine.",
+      duration: "7 Days / 6 Nights",
+      price: "₹65,999",
+      originalPrice: "₹75,000"
+    },
+    {
+      title: "Dubai Extravaganza",
+      image: "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?auto=format&fit=crop&w=600&q=80",
+      description: "Burj Khalifa, Dubai Mall, desert safari, Palm Jumeirah. Futuristic city experience.",
+      duration: "5 Days / 4 Nights",
+      price: "₹45,999",
+      originalPrice: "₹55,000"
+    },
+    {
+      title: "Russia Grand Tour",
+      image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+      description: "Moscow Red Square, St. Petersburg Hermitage, Trans-Siberian glimpse. Grand historical journey.",
+      duration: "8 Days / 7 Nights",
+      price: "₹85,999",
+      originalPrice: "₹95,000"
+    },
+    {
+      title: "Estonia Baltic Charm",
+      image: "https://images.unsplash.com/photo-1518976024611-4886d2ba0a10?auto=format&fit=crop&w=600&q=80",
+      description: "Tallinn medieval old town, Lahemaa National Park, Baltic coast. Fairy tale Europe.",
+      duration: "6 Days / 5 Nights",
+      price: "₹58,999",
+      originalPrice: "₹68,000"
+    },
+    {
+      title: "Spain Fiesta",
+      image: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80",
+      description: "Barcelona Sagrada Familia, Madrid Prado, flamenco shows, Costa del Sol beaches.",
+      duration: "8 Days / 7 Nights",
+      price: "₹75,999",
+      originalPrice: "₹85,000"
+    },
+    {
+      title: "Japan Cultural Journey",
+      image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=600&q=80",
+      description: "Tokyo modern marvels, Kyoto temples, Mt. Fuji, cherry blossoms. Tech meets tradition.",
+      duration: "8 Days / 7 Nights",
+      price: "₹95,999",
+      originalPrice: "₹110,000"
+    },
+    {
+      title: "Singapore Malaysia",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80",
+      description: "Singapore Gardens, Universal Studios, Kuala Lumpur Twin Towers, Genting Highlands.",
+      duration: "6 Days / 5 Nights",
+      price: "₹52,999",
+      originalPrice: "₹62,000"
+    },
+    {
+      title: "Thailand Paradise",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80",
+      description: "Bangkok temples, Phuket beaches, Phi Phi Islands, Thai cuisine and cultural shows.",
+      duration: "6 Days / 5 Nights",
+      price: "₹42,999",
+      originalPrice: "₹50,000"
+    }
   ];
 
   const testimonials = [
@@ -76,6 +158,30 @@ const Index = () => {
       tour: "Car Rental",
       image: "https://randomuser.me/api/portraits/men/33.jpg", 
       text: "Booked a sedan from Indore to Bhopal. Car was clean, driver polite, and fare reasonable. Booking was easy!"
+    }
+  ];
+
+  const carRentalServices = [
+    {
+      type: "Mini Car",
+      image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=400&q=80",
+      description: "Compact & fuel-efficient for city rides and short distances.",
+      rate: "₹10/km",
+      features: ["AC", "4 Seater", "Fuel Efficient"]
+    },
+    {
+      type: "Sedan Car",
+      image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=400&q=80",
+      description: "Comfortable sedans for business trips and family outings.",
+      rate: "₹15/km",
+      features: ["AC", "5 Seater", "Comfortable", "Spacious"]
+    },
+    {
+      type: "SUV",
+      image: "https://images.unsplash.com/photo-1566473965997-3de9c817e938?auto=format&fit=crop&w=400&q=80",
+      description: "Premium SUVs for group travel and long-distance journeys.",
+      rate: "₹20/km",
+      features: ["AC", "7 Seater", "Premium", "Long Distance"]
     }
   ];
 
@@ -128,6 +234,13 @@ const Index = () => {
     toast({
       title: "Fare Calculated!",
       description: `Estimated fare: ₹${fare} for ${distance}km (${service.toUpperCase()})`,
+    });
+  };
+
+  const handleBooking = (tourName: string, tourType: string) => {
+    toast({
+      title: "Booking Initiated!",
+      description: `Thank you for your interest in ${tourName}. Our team will contact you soon.`,
     });
   };
 
@@ -281,7 +394,7 @@ const Index = () => {
             <Map className="w-8 h-8 text-blue-600" />
             Domestic Tours
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {domesticTours.map((tour, index) => (
               <div
                 key={tour.title}
@@ -290,10 +403,37 @@ const Index = () => {
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <img src={tour.image} alt={tour.title} className="w-full h-48 object-cover" />
+                <div className="relative">
+                  <img src={tour.image} alt={tour.title} className="w-full h-48 object-cover" />
+                  <div className="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 rounded-lg text-sm font-semibold">
+                    Save ₹{parseInt(tour.originalPrice.replace('₹', '').replace(',', '')) - parseInt(tour.price.replace('₹', '').replace(',', ''))}
+                  </div>
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-blue-600 mb-2">{tour.title}</h3>
-                  <p className="text-slate-700">{tour.description}</p>
+                  <p className="text-slate-700 mb-3 text-sm">{tour.description}</p>
+                  <div className="flex items-center gap-2 mb-3">
+                    <Calendar className="w-4 h-4 text-slate-500" />
+                    <span className="text-sm text-slate-600">{tour.duration}</span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-2xl font-bold text-green-600">{tour.price}</span>
+                    <span className="text-sm text-slate-500 line-through">{tour.originalPrice}</span>
+                    <span className="text-sm text-slate-600">per person</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <button 
+                      onClick={() => handleBooking(tour.title, 'domestic')}
+                      className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                    >
+                      <ShoppingCart className="w-4 h-4" />
+                      Book Now
+                    </button>
+                    <button className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-semibold hover:bg-slate-200 transition-colors flex items-center gap-2">
+                      <Eye className="w-4 h-4" />
+                      Details
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -308,7 +448,7 @@ const Index = () => {
             <Globe className="w-8 h-8 text-blue-600" />
             International Tours
           </h2>
-          <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {internationalTours.map((tour, index) => (
               <div
                 key={tour.title}
@@ -317,10 +457,36 @@ const Index = () => {
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <img src={tour.image} alt={tour.title} className="w-full h-32 object-cover" />
+                <div className="relative">
+                  <img src={tour.image} alt={tour.title} className="w-full h-36 object-cover" />
+                  <div className="absolute top-3 right-3 bg-red-500 text-white px-2 py-1 rounded-lg text-xs font-semibold">
+                    Save ₹{parseInt(tour.originalPrice.replace('₹', '').replace(',', '')) - parseInt(tour.price.replace('₹', '').replace(',', ''))}
+                  </div>
+                </div>
                 <div className="p-4">
-                  <h3 className="text-lg font-semibold text-blue-600 mb-1">{tour.title}</h3>
-                  <p className="text-slate-700 text-sm">{tour.description}</p>
+                  <h3 className="text-lg font-semibold text-blue-600 mb-2">{tour.title}</h3>
+                  <p className="text-slate-700 mb-3 text-xs">{tour.description}</p>
+                  <div className="flex items-center gap-2 mb-3">
+                    <Calendar className="w-3 h-3 text-slate-500" />
+                    <span className="text-xs text-slate-600">{tour.duration}</span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-lg font-bold text-green-600">{tour.price}</span>
+                    <span className="text-xs text-slate-500 line-through">{tour.originalPrice}</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <button 
+                      onClick={() => handleBooking(tour.title, 'international')}
+                      className="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-1 text-sm"
+                    >
+                      <ShoppingCart className="w-3 h-3" />
+                      Book
+                    </button>
+                    <button className="bg-slate-100 text-slate-700 px-3 py-2 rounded-lg font-semibold hover:bg-slate-200 transition-colors flex items-center gap-1 text-sm">
+                      <Eye className="w-3 h-3" />
+                      Details
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -329,14 +495,40 @@ const Index = () => {
       </section>
 
       <section id="rental" className="py-20 bg-white/50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-slate-800 mb-12 flex items-center gap-3">
             <Car className="w-8 h-8 text-blue-600" />
-            Car Rental
+            Car Rental Services
           </h2>
           
-          <form onSubmit={handleRentalCalculation} className="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-slate-200">
-            <div className="grid md:grid-cols-4 gap-6 items-end">
+          {/* Car Rental Types */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {carRentalServices.map((service, index) => (
+              <div key={service.type} className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
+                <img src={service.image} alt={service.type} className="w-full h-40 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-blue-600 mb-2">{service.type}</h3>
+                  <p className="text-slate-700 mb-3 text-sm">{service.description}</p>
+                  <div className="text-2xl font-bold text-green-600 mb-3">{service.rate}</div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {service.features.map((feature, idx) => (
+                      <span key={idx} className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                  <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    Select This Car
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Fare Calculator */}
+          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-slate-200">
+            <h3 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Calculate Your Fare</h3>
+            <form onSubmit={handleRentalCalculation} className="grid md:grid-cols-4 gap-6 items-end">
               <div>
                 <label htmlFor="source" className="block text-sm font-medium text-slate-700 mb-2">Source</label>
                 <select name="source" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:outline-none bg-slate-50">
@@ -380,8 +572,8 @@ const Index = () => {
                 <Calculator className="w-5 h-5" />
                 Calculate Fare
               </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </section>
 
