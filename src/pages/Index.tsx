@@ -132,7 +132,7 @@ const Index = () => {
     },
     {
       title: "Thailand Paradise",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=600&q=80",
       description: "Bangkok temples, Phuket beaches, Phi Phi Islands, Thai cuisine and cultural shows.",
       duration: "6 Days / 5 Nights",
       price: "₹42,999",
@@ -161,27 +161,27 @@ const Index = () => {
     }
   ];
 
-  const carRentalServices = [
+  const carFleet = [
     {
-      type: "Mini Car",
-      image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=400&q=80",
-      description: "Compact & fuel-efficient for city rides and short distances.",
-      rate: "₹10/km",
-      features: ["AC", "4 Seater", "Fuel Efficient"]
-    },
-    {
-      type: "Sedan Car",
-      image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=400&q=80",
-      description: "Comfortable sedans for business trips and family outings.",
-      rate: "₹15/km",
-      features: ["AC", "5 Seater", "Comfortable", "Spacious"]
-    },
-    {
-      type: "SUV",
+      type: "Innova",
       image: "https://images.unsplash.com/photo-1566473965997-3de9c817e938?auto=format&fit=crop&w=400&q=80",
-      description: "Premium SUVs for group travel and long-distance journeys.",
-      rate: "₹20/km",
-      features: ["AC", "7 Seater", "Premium", "Long Distance"]
+      description: "Perfect for family trips and group travel with comfortable seating.",
+      capacity: "7 Seater",
+      rate: "₹18/km"
+    },
+    {
+      type: "Tempo Traveller",
+      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=400&q=80",
+      description: "Ideal for large groups and corporate travel with ample space.",
+      capacity: "12-15 Seater",
+      rate: "₹25/km"
+    },
+    {
+      type: "Luxury Bus",
+      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=400&q=80",
+      description: "Premium comfort for large groups and long-distance journeys.",
+      capacity: "35-45 Seater",
+      rate: "₹40/km"
     }
   ];
 
@@ -501,32 +501,107 @@ const Index = () => {
             Car Rental Services
           </h2>
           
-          {/* Car Rental Types */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {carRentalServices.map((service, index) => (
-              <div key={service.type} className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
-                <img src={service.image} alt={service.type} className="w-full h-40 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-blue-600 mb-2">{service.type}</h3>
-                  <p className="text-slate-700 mb-3 text-sm">{service.description}</p>
-                  <div className="text-2xl font-bold text-green-600 mb-3">{service.rate}</div>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {service.features.map((feature, idx) => (
-                      <span key={idx} className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
-                        {feature}
+          {/* Fleet Overview */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-semibold text-slate-800 mb-8">Our Fleet</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              {carFleet.map((vehicle, index) => (
+                <div key={vehicle.type} className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
+                  <img src={vehicle.image} alt={vehicle.type} className="w-full h-40 object-cover" />
+                  <div className="p-6">
+                    <h4 className="text-xl font-semibold text-blue-600 mb-2">{vehicle.type}</h4>
+                    <p className="text-slate-700 mb-3 text-sm">{vehicle.description}</p>
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                        {vehicle.capacity}
                       </span>
-                    ))}
+                      <span className="text-xl font-bold text-green-600">{vehicle.rate}</span>
+                    </div>
+                    <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                      Book {vehicle.type}
+                    </button>
                   </div>
-                  <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                    Select This Car
-                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Services Offered */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-semibold text-slate-800 mb-8">Services Offered</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-slate-200 text-center">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Car className="w-6 h-6 text-blue-600" />
+                </div>
+                <h4 className="font-semibold text-slate-800 mb-2">Airport Transfers</h4>
+                <p className="text-sm text-slate-600">Comfortable rides to/from airports</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-slate-200 text-center">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Map className="w-6 h-6 text-blue-600" />
+                </div>
+                <h4 className="font-semibold text-slate-800 mb-2">City Tours</h4>
+                <p className="text-sm text-slate-600">Explore cities with local drivers</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-slate-200 text-center">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Calendar className="w-6 h-6 text-blue-600" />
+                </div>
+                <h4 className="font-semibold text-slate-800 mb-2">Long Distance</h4>
+                <p className="text-sm text-slate-600">Intercity travel with comfort</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-slate-200 text-center">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Star className="w-6 h-6 text-blue-600" />
+                </div>
+                <h4 className="font-semibold text-slate-800 mb-2">Corporate Travel</h4>
+                <p className="text-sm text-slate-600">Business travel solutions</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Rental Pricing Info */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-slate-800 mb-8">Pricing Information</h3>
+            <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-8">
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <h4 className="text-lg font-semibold text-blue-600 mb-2">Economy</h4>
+                  <p className="text-3xl font-bold text-green-600 mb-2">₹10-15</p>
+                  <p className="text-sm text-slate-600">per km</p>
+                  <ul className="mt-4 text-sm text-slate-700 space-y-1">
+                    <li>• Hatchback & Sedan</li>
+                    <li>• AC & Music System</li>
+                    <li>• 4-5 Seater</li>
+                  </ul>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-lg font-semibold text-blue-600 mb-2">Premium</h4>
+                  <p className="text-3xl font-bold text-green-600 mb-2">₹18-25</p>
+                  <p className="text-sm text-slate-600">per km</p>
+                  <ul className="mt-4 text-sm text-slate-700 space-y-1">
+                    <li>• SUV & Innova</li>
+                    <li>• Premium Comfort</li>
+                    <li>• 6-7 Seater</li>
+                  </ul>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-lg font-semibold text-blue-600 mb-2">Luxury</h4>
+                  <p className="text-3xl font-bold text-green-600 mb-2">₹30-50</p>
+                  <p className="text-sm text-slate-600">per km</p>
+                  <ul className="mt-4 text-sm text-slate-700 space-y-1">
+                    <li>• Tempo & Bus</li>
+                    <li>• Group Travel</li>
+                    <li>• 12+ Seater</li>
+                  </ul>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
 
           {/* Fare Calculator */}
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-slate-200">
+          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-slate-200 mb-12">
             <h3 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Calculate Your Fare</h3>
             <form onSubmit={handleRentalCalculation} className="grid md:grid-cols-4 gap-6 items-end">
               <div>
@@ -573,6 +648,21 @@ const Index = () => {
                 Calculate Fare
               </button>
             </form>
+          </div>
+
+          {/* Booking CTA */}
+          <div className="text-center">
+            <h3 className="text-2xl font-semibold text-slate-800 mb-4">Ready to Book Your Ride?</h3>
+            <p className="text-lg text-slate-600 mb-8">Contact us now for instant booking and best rates</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <button className="bg-gradient-to-r from-blue-600 to-teal-400 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all flex items-center gap-2">
+                <CalendarPlus className="w-5 h-5" />
+                Book Now
+              </button>
+              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold border-2 border-blue-200 hover:bg-slate-50 transition-all">
+                Call Now: +91 98765 43210
+              </button>
+            </div>
           </div>
         </div>
       </section>
