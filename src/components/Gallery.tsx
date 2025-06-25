@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Image } from 'lucide-react';
+import { Images } from 'lucide-react';
 import { galleryImages } from '@/data/constants';
 
 const Gallery: React.FC = () => {
@@ -8,7 +8,7 @@ const Gallery: React.FC = () => {
     <section id="gallery" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-slate-800 mb-12 flex items-center gap-3">
-          <Image className="w-8 h-8 text-blue-600" />
+          <Images className="w-8 h-8 text-blue-600" />
           Gallery
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

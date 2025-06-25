@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Car, Map, Calendar, Star, CalendarPlus, Calculator } from 'lucide-react';
-import { carFleet } from '@/data/constants';
 import { toast } from "@/hooks/use-toast";
 
 const CarRental: React.FC = () => {
@@ -21,7 +20,7 @@ const CarRental: React.FC = () => {
       return;
     }
 
-    const baseFares = { mini: 10, sedan: 15, suv: 20 };
+    const baseFares = { economy: 12, premium: 20, luxury: 35 };
     const distance = Math.floor(Math.random() * 500) + 100;
     const fare = distance * baseFares[service as keyof typeof baseFares];
     
@@ -38,30 +37,6 @@ const CarRental: React.FC = () => {
           <Car className="w-8 h-8 text-blue-600" />
           Car Rental Services
         </h2>
-        
-        {/* Fleet Overview */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-slate-800 mb-8">Our Fleet</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {carFleet.map((vehicle, index) => (
-              <div key={vehicle.type} className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div className="p-6">
-                  <h4 className="text-xl font-semibold text-blue-600 mb-2">{vehicle.type}</h4>
-                  <p className="text-slate-700 mb-3 text-sm">{vehicle.description}</p>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                      {vehicle.capacity}
-                    </span>
-                    <span className="text-xl font-bold text-green-600">{vehicle.rate}</span>
-                  </div>
-                  <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                    Book {vehicle.type}
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Services Offered */}
         <div className="mb-16">
@@ -170,10 +145,10 @@ const CarRental: React.FC = () => {
             <div>
               <label htmlFor="service" className="block text-sm font-medium text-slate-700 mb-2">Car Type</label>
               <select name="service" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:outline-none bg-slate-50">
-                <option value="">Select Car</option>
-                <option value="mini">Mini</option>
-                <option value="sedan">Sedan</option>
-                <option value="suv">SUV</option>
+                <option value="">Select Car Type</option>
+                <option value="economy">Economy</option>
+                <option value="premium">Premium</option>
+                <option value="luxury">Luxury</option>
               </select>
             </div>
             
