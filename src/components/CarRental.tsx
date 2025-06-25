@@ -20,13 +20,20 @@ const CarRental: React.FC = () => {
       return;
     }
 
-    const baseFares = { economy: 12, premium: 20, luxury: 35 };
+    const baseFares = { mini: 12, spacious: 20, jumbo: 35 };
     const distance = Math.floor(Math.random() * 500) + 100;
     const fare = distance * baseFares[service as keyof typeof baseFares];
     
     toast({
       title: "Fare Calculated!",
       description: `Estimated fare: ₹${fare} for ${distance}km (${service.toUpperCase()})`,
+    });
+  };
+
+  const handleBookingClick = () => {
+    toast({
+      title: "Booking Confirmed!",
+      description: "Thanks, your booking is done. Soon details of the cab will be shared.",
     });
   };
 
@@ -79,7 +86,7 @@ const CarRental: React.FC = () => {
           <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-8">
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <h4 className="text-lg font-semibold text-blue-600 mb-2">Economy</h4>
+                <h4 className="text-lg font-semibold text-blue-600 mb-2">Mini</h4>
                 <p className="text-3xl font-bold text-green-600 mb-2">₹10-15</p>
                 <p className="text-sm text-slate-600">per km</p>
                 <ul className="mt-4 text-sm text-slate-700 space-y-1">
@@ -89,7 +96,7 @@ const CarRental: React.FC = () => {
                 </ul>
               </div>
               <div className="text-center">
-                <h4 className="text-lg font-semibold text-blue-600 mb-2">Premium</h4>
+                <h4 className="text-lg font-semibold text-blue-600 mb-2">Spacious</h4>
                 <p className="text-3xl font-bold text-green-600 mb-2">₹18-25</p>
                 <p className="text-sm text-slate-600">per km</p>
                 <ul className="mt-4 text-sm text-slate-700 space-y-1">
@@ -99,7 +106,7 @@ const CarRental: React.FC = () => {
                 </ul>
               </div>
               <div className="text-center">
-                <h4 className="text-lg font-semibold text-blue-600 mb-2">Luxury</h4>
+                <h4 className="text-lg font-semibold text-blue-600 mb-2">Jumbo</h4>
                 <p className="text-3xl font-bold text-green-600 mb-2">₹30-50</p>
                 <p className="text-sm text-slate-600">per km</p>
                 <ul className="mt-4 text-sm text-slate-700 space-y-1">
@@ -146,9 +153,9 @@ const CarRental: React.FC = () => {
               <label htmlFor="service" className="block text-sm font-medium text-slate-700 mb-2">Car Type</label>
               <select name="service" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:outline-none bg-slate-50">
                 <option value="">Select Car Type</option>
-                <option value="economy">Economy</option>
-                <option value="premium">Premium</option>
-                <option value="luxury">Luxury</option>
+                <option value="mini">Mini</option>
+                <option value="spacious">Spacious</option>
+                <option value="jumbo">Jumbo</option>
               </select>
             </div>
             
@@ -166,13 +173,13 @@ const CarRental: React.FC = () => {
         <div className="text-center">
           <h3 className="text-2xl font-semibold text-slate-800 mb-4">Ready to Book Your Ride?</h3>
           <p className="text-lg text-slate-600 mb-8">Contact us now for instant booking and best rates</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-gradient-to-r from-blue-600 to-teal-400 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all flex items-center gap-2">
+          <div className="flex justify-center">
+            <button 
+              onClick={handleBookingClick}
+              className="bg-gradient-to-r from-blue-600 to-teal-400 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all flex items-center gap-2"
+            >
               <CalendarPlus className="w-5 h-5" />
               Book Now
-            </button>
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold border-2 border-blue-200 hover:bg-slate-50 transition-all">
-              Call Now: +91 98765 43210
             </button>
           </div>
         </div>

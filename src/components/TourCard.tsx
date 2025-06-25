@@ -19,16 +19,16 @@ interface TourCardProps {
 
 const TourCard: React.FC<TourCardProps> = ({ tour, onBook, tourType, index, visibleElements }) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 opacity-100 translate-y-0">
+    <div className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 opacity-100 translate-y-0 flex flex-col h-full">
       <div className="relative">
         <img src={tour.image} alt={tour.title} className="w-full h-48 object-cover" />
         <div className="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 rounded-lg text-sm font-semibold">
           Save ₹{parseInt(tour.originalPrice.replace('₹', '').replace(',', '')) - parseInt(tour.price.replace('₹', '').replace(',', ''))}
         </div>
       </div>
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-semibold text-blue-600 mb-2">{tour.title}</h3>
-        <p className="text-slate-700 mb-3 text-sm">{tour.description}</p>
+        <p className="text-slate-700 mb-3 text-sm flex-grow">{tour.description}</p>
         <div className="flex items-center gap-2 mb-3">
           <Calendar className="w-4 h-4 text-slate-500" />
           <span className="text-sm text-slate-600">{tour.duration}</span>
@@ -40,7 +40,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBook, tourType, index, visi
         </div>
         <button 
           onClick={() => onBook(tour.title, tourType)}
-          className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+          className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 mt-auto"
         >
           <ShoppingCart className="w-4 h-4" />
           Book Now

@@ -20,7 +20,7 @@ const InternationalTours: React.FC<InternationalToursProps> = ({ visibleElements
           {internationalTours.map((tour, index) => (
             <div
               key={tour.title}
-              className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 opacity-100 translate-y-0"
+              className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 opacity-100 translate-y-0 flex flex-col h-full"
             >
               <div className="relative">
                 <img src={tour.image} alt={tour.title} className="w-full h-36 object-cover" />
@@ -28,9 +28,9 @@ const InternationalTours: React.FC<InternationalToursProps> = ({ visibleElements
                   Save ₹{parseInt(tour.originalPrice.replace('₹', '').replace(',', '')) - parseInt(tour.price.replace('₹', '').replace(',', ''))}
                 </div>
               </div>
-              <div className="p-4">
+              <div className="p-4 flex flex-col flex-grow">
                 <h3 className="text-lg font-semibold text-blue-600 mb-2">{tour.title}</h3>
-                <p className="text-slate-700 mb-3 text-xs">{tour.description}</p>
+                <p className="text-slate-700 mb-3 text-xs flex-grow">{tour.description}</p>
                 <div className="flex items-center gap-2 mb-3">
                   <Calendar className="w-3 h-3 text-slate-500" />
                   <span className="text-xs text-slate-600">{tour.duration}</span>
@@ -41,7 +41,7 @@ const InternationalTours: React.FC<InternationalToursProps> = ({ visibleElements
                 </div>
                 <button 
                   onClick={() => handleBooking(tour.title, 'international')}
-                  className="w-full bg-blue-600 text-white px-3 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-1 text-sm"
+                  className="w-full bg-blue-600 text-white px-3 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-1 text-sm mt-auto"
                 >
                   <ShoppingCart className="w-3 h-3" />
                   Book Now
