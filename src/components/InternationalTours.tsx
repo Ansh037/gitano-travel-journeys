@@ -20,10 +20,7 @@ const InternationalTours: React.FC<InternationalToursProps> = ({ visibleElements
           {internationalTours.map((tour, index) => (
             <div
               key={tour.title}
-              className={`bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 fade-seq ${
-                visibleElements.has('fade-seq') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 opacity-100 translate-y-0"
             >
               <div className="relative">
                 <img src={tour.image} alt={tour.title} className="w-full h-36 object-cover" />
