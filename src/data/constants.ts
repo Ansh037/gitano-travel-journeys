@@ -17,7 +17,7 @@ export const domesticTours = [
   },
   {
     title: "Gangtok & North Sikkim",
-    image: "https://images.unsplash.com/photo-1519681393-2de5e0c1df6a?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80",
     description: "Lachung, Gurudongmar Lake, Yumthang Valley, MG Road. Experience pristine Himalayan beauty.",
     duration: "6 Days / 5 Nights",
     price: "₹28,999",
@@ -92,7 +92,7 @@ export const internationalTours = [
   },
   {
     title: "Estonia Baltic Charm",
-    image: "https://images.unsplash.com/photo-1518976024611-4886d2ba0a10?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1554072675-66db59dba46f?auto=format&fit=crop&w=600&q=80",
     description: "Tallinn medieval old town, Lahemaa National Park, Baltic coast. Fairy tale Europe.",
     duration: "6 Days / 5 Nights",
     price: "₹58,999",
@@ -172,15 +172,4 @@ export const carFleet = [
     capacity: "35-45 Seater",
     rate: "₹40/km"
   }
-];
-
-export const galleryImages = [
-  "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1519681393-2de5e0c1df6a?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=400&q=80"
 ];

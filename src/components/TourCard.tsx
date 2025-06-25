@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Calendar, ShoppingCart, Eye } from 'lucide-react';
+import { Calendar, ShoppingCart } from 'lucide-react';
 
 interface TourCardProps {
   tour: {
@@ -38,19 +38,13 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBook, tourType, index, visi
           <span className="text-sm text-slate-500 line-through">{tour.originalPrice}</span>
           <span className="text-sm text-slate-600">per person</span>
         </div>
-        <div className="flex gap-2">
-          <button 
-            onClick={() => onBook(tour.title, tourType)}
-            className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-          >
-            <ShoppingCart className="w-4 h-4" />
-            Book Now
-          </button>
-          <button className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-semibold hover:bg-slate-200 transition-colors flex items-center gap-2">
-            <Eye className="w-4 h-4" />
-            Details
-          </button>
-        </div>
+        <button 
+          onClick={() => onBook(tour.title, tourType)}
+          className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+        >
+          <ShoppingCart className="w-4 h-4" />
+          Book Now
+        </button>
       </div>
     </div>
   );
