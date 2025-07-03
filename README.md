@@ -1,73 +1,171 @@
-# Welcome to your Lovable project
 
-## Project info
+# Gitano Travel - Travel & Tourism Website
 
-**URL**: https://lovable.dev/projects/36467866-dd0a-48ba-9ef1-52d52c4f4628
+A modern, responsive travel and tourism website built with React, TypeScript, and Tailwind CSS. This website showcases travel packages, car rental services, and provides an easy way for customers to book their dream vacations.
 
-## How can I edit this code?
+## 🌟 Features
 
-There are several ways of editing your application.
+### Core Functionality
+- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
+- **Interactive Navigation**: Smooth scrolling navigation with mobile-friendly hamburger menu
+- **Tour Packages**: Separate sections for domestic and international tour packages
+- **Car Rental Service**: Dedicated section for car rental bookings
+- **Photo Gallery**: Beautiful image gallery showcasing travel destinations
+- **Contact System**: Multiple ways for customers to get in touch
+- **Booking System**: Easy-to-use enquiry and booking forms
 
-**Use Lovable**
+### User Experience
+- **Smooth Animations**: Fade-in animations as sections come into view
+- **Modern UI**: Clean, modern design with gradient backgrounds and card layouts
+- **Toast Notifications**: User-friendly feedback messages for form submissions
+- **Modal Forms**: Popup forms for contact and booking enquiries
+- **Social Media Integration**: Links to all major social media platforms
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/36467866-dd0a-48ba-9ef1-52d52c4f4628) and start prompting.
+### Technical Features
+- **TypeScript**: Full type safety throughout the application
+- **Component-Based Architecture**: Modular, reusable React components
+- **Responsive Grid Layouts**: CSS Grid and Flexbox for perfect layouts
+- **Modern CSS**: Tailwind CSS for rapid styling and consistent design
+- **Accessibility**: Screen reader friendly with proper ARIA labels
+- **SEO Optimized**: Semantic HTML structure for better search engine visibility
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Technologies Used
 
-**Use your preferred IDE**
+- **Frontend Framework**: React 18 with TypeScript
+- **Styling**: Tailwind CSS for utility-first CSS
+- **UI Components**: Shadcn/ui component library
+- **Icons**: Lucide React for beautiful, consistent icons
+- **Build Tool**: Vite for fast development and building
+- **State Management**: React hooks for local state
+- **Form Handling**: Controlled components with validation
+- **Routing**: React Router for navigation (ready for multi-page expansion)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📁 Project Structure
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/           # Reusable UI components
+│   ├── ui/              # Base UI components (buttons, forms, etc.)
+│   ├── Navigation.tsx   # Main navigation component
+│   ├── HeroSection.tsx  # Landing page hero section
+│   ├── AboutSection.tsx # About us section
+│   ├── DomesticTours.tsx     # Domestic tour packages
+│   ├── InternationalTours.tsx # International tour packages
+│   ├── CarRental.tsx    # Car rental services
+│   ├── Gallery.tsx      # Photo gallery
+│   ├── EnquirySection.tsx    # Booking/enquiry form
+│   ├── Testimonials.tsx # Customer testimonials
+│   └── ContactSection.tsx    # Contact information and form
+├── hooks/               # Custom React hooks
+├── lib/                 # Utility functions
+├── pages/               # Page components
+│   ├── Index.tsx        # Main homepage
+│   └── NotFound.tsx     # 404 error page
+└── main.tsx            # Application entry point
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
+- Node.js (version 16 or higher)
+- npm or yarn package manager
 
-**Use GitHub Codespaces**
+### Installation
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Clone the repository**
+   ```bash
+   git clone [your-repo-url]
+   cd gitano-travel
+   ```
 
-## What technologies are used for this project?
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-This project is built with:
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+4. **Open your browser**
+   Navigate to `http://localhost:5173` to see the website
 
-## How can I deploy this project?
+### Building for Production
 
-Simply open [Lovable](https://lovable.dev/projects/36467866-dd0a-48ba-9ef1-52d52c4f4628) and click on Share -> Publish.
+```bash
+npm run build
+```
 
-## Can I connect a custom domain to my Lovable project?
+The built files will be in the `dist` directory, ready for deployment.
 
-Yes, you can!
+## 📧 Contact Information
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**Gitano Travel**
+- **Address**: 456 Rajwada Road, Sarafa Bazaar, Indore, Madhya Pradesh - 452001
+- **Phone**: +91 98765 43210, +91 87654 32109
+- **Email**: info@gitanotravel.com, booking@gitanotravel.com
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🎨 Customization
+
+### Changing Colors
+The website uses a consistent color scheme defined in Tailwind CSS classes:
+- Primary: Blue (blue-600)
+- Secondary: Teal (teal-400)
+- Accent: Purple (purple-500)
+
+### Adding New Tour Packages
+1. Open `src/components/DomesticTours.tsx` or `src/components/InternationalTours.tsx`
+2. Add new tour objects to the tours array
+3. Include image URL, title, description, duration, and price
+
+### Updating Contact Information
+1. Open `src/components/ContactSection.tsx`
+2. Update the address, phone numbers, and email addresses
+3. Update the Google Maps embed URL for the new location
+
+## 📱 Responsive Design
+
+The website is fully responsive and tested on:
+- **Desktop**: 1920px and above
+- **Laptop**: 1024px to 1919px
+- **Tablet**: 768px to 1023px
+- **Mobile**: 320px to 767px
+
+## 🔧 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint for code quality
+
+## 🌐 Deployment
+
+This website can be deployed to any static hosting service:
+- **Vercel**: Connect your GitHub repo for automatic deployments
+- **Netlify**: Drag and drop the `dist` folder after building
+- **GitHub Pages**: Use GitHub Actions for automatic deployment
+- **Firebase Hosting**: Deploy with Firebase CLI
+
+## 📝 License
+
+This project is created for Gitano Travel. All rights reserved.
+
+## 🤝 Contributing
+
+If you're part of the Gitano Travel team and want to contribute:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📞 Support
+
+For technical support or questions about the website:
+- Email: info@gitanotravel.com
+- Phone: +91 98765 43210
+
+---
+
+**Built with ❤️ for Gitano Travel**

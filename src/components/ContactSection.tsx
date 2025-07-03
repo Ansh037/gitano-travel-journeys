@@ -58,8 +58,8 @@ const ContactSection: React.FC = () => {
                   <div>
                     <h4 className="font-semibold text-slate-800">Address</h4>
                     <p className="text-slate-600">
-                      123 Travel Street, Tourism District<br />
-                      New Delhi, India - 110001
+                      456 Rajwada Road, Sarafa Bazaar<br />
+                      Indore, Madhya Pradesh - 452001
                     </p>
                   </div>
                 </div>
@@ -180,14 +180,14 @@ const ContactSection: React.FC = () => {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="h-96 lg:h-full min-h-[400px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.582742064447!2d77.2090212!3d28.6139391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2daa9eb4d0b%3A0x717971125923e5d!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1644214782462!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58863.36205038584!2d75.81574854863282!3d22.719568040000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1644214782462!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Gitano Travel Location"
+                title="Gitano Travel Location - Indore"
               />
             </div>
           </div>
