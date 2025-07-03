@@ -17,13 +17,6 @@ const ContactSection: React.FC = () => {
     message: ''
   });
 
-  const handleGetQuote = () => {
-    toast({
-      title: "Quote Request Received!",
-      description: "Thanks for showing interest, the quote will be shared to you via email.",
-    });
-  };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -113,11 +106,11 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* Contact Button */}
+            <div className="flex justify-center">
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
-                  <Button className="bg-gradient-to-r from-blue-600 to-teal-400 text-white hover:shadow-xl transition-all flex-1">
+                  <Button className="bg-gradient-to-r from-blue-600 to-teal-400 text-white hover:shadow-xl transition-all px-8 py-3">
                     <Mail className="w-5 h-5 mr-2" />
                     Contact Us
                   </Button>
@@ -180,14 +173,6 @@ const ContactSection: React.FC = () => {
                   </form>
                 </DialogContent>
               </Dialog>
-
-              <Button 
-                onClick={handleGetQuote}
-                variant="outline"
-                className="border-blue-600 text-blue-600 hover:bg-blue-50 flex-1"
-              >
-                Get Quote
-              </Button>
             </div>
           </div>
 

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Menu, X, Home, Info, Map, Globe, Car, Camera, MessageCircle, Mail, CalendarPlus } from 'lucide-react';
+import { Menu, X, Home, Info, Map, Globe, Car, Camera, MessageCircle, Mail, CalendarPlus, FileText } from 'lucide-react';
 
 interface NavigationProps {
   scrollToSection: (sectionId: string) => void;
@@ -33,7 +33,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrollToSection }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {['home', 'about', 'domestic', 'international', 'rental', 'gallery', 'testimonials', 'contact'].map((item) => (
+            {['home', 'about', 'domestic', 'international', 'rental', 'gallery', 'enquiry', 'testimonials', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => handleScrollToSection(item)}
@@ -41,7 +41,8 @@ const Navigation: React.FC<NavigationProps> = ({ scrollToSection }) => {
               >
                 {item === 'domestic' ? 'Domestic Tours' : 
                  item === 'international' ? 'International Tours' :
-                 item === 'rental' ? 'Car Rental' : item}
+                 item === 'rental' ? 'Car Rental' :
+                 item === 'enquiry' ? 'Enquiry' : item}
               </button>
             ))}
             <button
@@ -49,7 +50,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrollToSection }) => {
               className="bg-gradient-to-r from-blue-600 to-teal-400 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center gap-2"
             >
               <CalendarPlus className="w-4 h-4" />
-              Enquiry
+              Book Now
             </button>
           </div>
 
@@ -74,6 +75,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrollToSection }) => {
               { id: 'international', label: 'International Tours', icon: Globe },
               { id: 'rental', label: 'Car Rental', icon: Car },
               { id: 'gallery', label: 'Gallery', icon: Camera },
+              { id: 'enquiry', label: 'Enquiry', icon: FileText },
               { id: 'testimonials', label: 'Testimonials', icon: MessageCircle },
               { id: 'contact', label: 'Contact', icon: Mail }
             ].map(({ id, label, icon: Icon }) => (
@@ -91,7 +93,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrollToSection }) => {
               className="w-full bg-gradient-to-r from-blue-600 to-teal-400 text-white px-4 py-3 rounded-lg font-semibold mt-4 flex items-center justify-center gap-2"
             >
               <CalendarPlus className="w-4 h-4" />
-              Enquiry
+              Book Now
             </button>
           </div>
         </div>
