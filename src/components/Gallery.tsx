@@ -15,31 +15,52 @@ const Gallery: React.FC = () => {
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80",
+      src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
       title: "Kerala Backwaters",
       category: "domestic",
       alt: "Serene backwaters of Kerala"
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1539650116574-75c0c6d73982?auto=format&fit=crop&w=800&q=80",
+      src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
       title: "Rajasthan Palace",
       category: "domestic",
       alt: "Historic palace in Rajasthan"
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1520637836862-4d197d17c79a?auto=format&fit=crop&w=800&q=80",
-      title: "Dubai Skyline",
-      category: "international",
-      alt: "Modern Dubai skyline at sunset"
+      src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      title: "Goa Beaches",
+      category: "domestic",
+      alt: "Beautiful Goa beaches"
     },
     {
       id: 5,
-      src: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80",
-      title: "European Architecture",
+      src: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+      title: "Vietnam Discovery",
       category: "international",
-      alt: "Beautiful European city architecture"
+      alt: "Beautiful Vietnam landscape"
+    },
+    {
+      id: 6,
+      src: "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?auto=format&fit=crop&w=800&q=80",
+      title: "Dubai Extravaganza",
+      category: "international", 
+      alt: "Dubai modern skyline"
+    },
+    {
+      id: 7,
+      src: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
+      title: "Russia Grand Tour",
+      category: "international",
+      alt: "Russian architecture"
+    },
+    {
+      id: 8,
+      src: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80",
+      title: "Spain Fiesta",
+      category: "international",
+      alt: "Beautiful Spanish architecture"
     }
   ];
 
@@ -85,7 +106,7 @@ const Gallery: React.FC = () => {
         </div>
 
         {/* Image Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredImages.map((image, index) => (
             <div
               key={image.id}
@@ -98,6 +119,11 @@ const Gallery: React.FC = () => {
                 src={image.src}
                 alt={image.alt}
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                onError={(e) => {
+                  console.log(`Failed to load image: ${image.src}`);
+                  // Fallback to a placeholder if image fails to load
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 right-4">
