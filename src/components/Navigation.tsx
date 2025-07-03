@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Menu, X, Home, Info, Map, Globe, Car, MessageCircle, Mail, CalendarPlus } from 'lucide-react';
+import { Menu, X, Home, Info, Map, Globe, Car, Camera, MessageCircle, Mail, CalendarPlus } from 'lucide-react';
 
 interface NavigationProps {
   scrollToSection: (sectionId: string) => void;
@@ -33,7 +33,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrollToSection }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {['home', 'about', 'domestic', 'international', 'rental', 'testimonials', 'contact'].map((item) => (
+            {['home', 'about', 'domestic', 'international', 'rental', 'gallery', 'testimonials', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => handleScrollToSection(item)}
@@ -73,6 +73,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrollToSection }) => {
               { id: 'domestic', label: 'Domestic Tours', icon: Map },
               { id: 'international', label: 'International Tours', icon: Globe },
               { id: 'rental', label: 'Car Rental', icon: Car },
+              { id: 'gallery', label: 'Gallery', icon: Camera },
               { id: 'testimonials', label: 'Testimonials', icon: MessageCircle },
               { id: 'contact', label: 'Contact', icon: Mail }
             ].map(({ id, label, icon: Icon }) => (

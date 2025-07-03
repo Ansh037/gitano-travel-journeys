@@ -7,6 +7,7 @@ import AboutSection from '@/components/AboutSection';
 import DomesticTours from '@/components/DomesticTours';
 import InternationalTours from '@/components/InternationalTours';
 import CarRental from '@/components/CarRental';
+import Gallery from '@/components/Gallery';
 import Testimonials from '@/components/Testimonials';
 import ContactSection from '@/components/ContactSection';
 
@@ -51,6 +52,7 @@ const Index = () => {
       <DomesticTours visibleElements={visibleElements} handleBooking={handleBooking} />
       <InternationalTours visibleElements={visibleElements} handleBooking={handleBooking} />
       <CarRental />
+      <Gallery />
       <Testimonials />
       <ContactSection />
       <div id="booking" className="h-1"></div>
